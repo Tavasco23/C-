@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
-#include <ctime> // for time()
+
+
+//John Emmanuelle G. Arellado
+//BIT33
 using namespace std;
 
 struct Pet {
@@ -10,7 +13,7 @@ struct Pet {
     float price;
 };
 
-// Input/Output to insert pet you want to order
+
 void petIO() {
     string name;
     float price;
@@ -21,7 +24,7 @@ void petIO() {
     cout << "The pet is " << name << " with the price of " << price << "." << endl;
 }
 
-// Conditional statements to check if pet is expensivess
+
 void petConditional() {
     float price;
     cout << "\n--- Check the pet price (Expensive or Affordable) ---" << endl;
@@ -33,7 +36,7 @@ void petConditional() {
         cout << "Pet is affordable." << endl;
 }
 
-// Loops to display pets and their ages
+
 void petLoop() {
     string petType;
     cout << "\nEnter type of pet: ";
@@ -41,31 +44,23 @@ void petLoop() {
 
     cout << "\nPet Ages:" << endl;
     for (int i = 1; i <= 5; ++i) {
-        int age = (time(0) + i) % 10 + 1; // pseudo-random age between 1 and 10
+        int age = (petType.length() * i + 3) % 10 + 1; 
         cout << petType << " " << i << " - Age: " << age << endl;
     }
 }
 
-// Arrays to store and display pet names
+
 void petArray() {
     string pets[3];
-    cout << "\nEnter 3 pet names:" << endl;
-    for (int i = 0; i < 3; ++i) {
-        cout << "Pet " << (i + 1) << ": ";
-        cin >> pets[i];
-    }
+    cout << "\nEnter 3 pet names:\n";
+    for (int i = 0; i < 3; ++i) cin >> pets[i];
 
-    cout << "\nPet names: ";
-    for (int i = 0; i < 3; ++i) {
-        cout << pets[i] << " ";
-    }
-    cout << endl;
-
-    int randomIndex = time(0) % 3;
-    cout << "Randomly selected pet name: " << pets[randomIndex] << endl;
+    cout << "\nPet names: " << pets[0] << " " << pets[1] << " " << pets[2] << endl;
+    int index = pets[0].length() % 3;
+    cout << "Selected pet: " << pets[index] << endl;
 }
 
-// Functions to check if pet is young
+
 void petFunction() {
     int age;
     cout << "\nEnter pet age: ";
@@ -77,7 +72,7 @@ void petFunction() {
     }
 }
 
-// Structures to display the pet information
+
 void petStructure() {
     Pet pet;
     cout << "\nEnter pet name: ";
@@ -96,7 +91,7 @@ void petStructure() {
     cout << "Price: " << pet.price << endl;
 }
 
-// Pointer to display address of a bird
+
 void petPointer() {
     string bird;
     cout << "\nEnter the name of the bird: ";
@@ -105,12 +100,12 @@ void petPointer() {
     cout << "The address of the bird (" << bird << ") is: " << ptr << endl;
 }
 
-// Quit
+
 void quit() {
     cout << "\nThank you for visiting the Pet Shop!" << endl;
 }
 
-// MENU
+
 int main() {
     int choice;
     do {
